@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{40B69600-C3A8-4CEB-B202-127528EE5586}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WarHorseMicroSite</RootNamespace>
+    <AssemblyName>WarHorseMicroSite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\css\ajax-loader.gif" />
+    <Content Include="content\css\fonts\slick.svg" />
+    <Content Include="content\css\site.scss" />
+    <Content Include="content\css\slick.css">
+      <DependentUpon>slick.scss</DependentUpon>
+    </Content>
+    <Content Include="content\css\slick.min.css">
+      <DependentUpon>slick.css</DependentUpon>
+    </Content>
+    <Content Include="content\css\_colours.scss" />
+    <Content Include="content\css\_fonts.scss" />
+    <Content Include="content\css\_mixins.scss" />
+    <Content Include="content\fonts\fontawesome-webfont.eot" />
+    <Content Include="content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="content\fonts\fontawesome-webfont.woff" />
+    <Content Include="content\fonts\FontAwesome.otf" />
+    <Content Include="content\css\_font-awesome.scss" />
+    <Content Include="content\css\_bordered-pulled.scss" />
+    <Content Include="content\css\_core.scss" />
+    <Content Include="content\css\_fixed-width.scss" />
+    <Content Include="content\css\_icons.scss" />
+    <Content Include="content\css\_larger.scss" />
+    <Content Include="content\css\_list.scss" />
+    <Content Include="content\css\_path.scss" />
+    <Content Include="content\css\_rotated-flipped.scss" />
+    <Content Include="content\css\_spinning.scss" />
+    <Content Include="content\css\_stacked.scss" />
+    <Content Include="content\css\_variables.scss" />
+    <Content Include="content\css\site.css.map">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="content\css\slick.scss" />
+    <Content Include="content\css\fonts\slick.eot" />
+    <Content Include="content\css\fonts\slick.ttf" />
+    <Content Include="content\css\fonts\slick.woff" />
+    <Content Include="content\css\slick.css.map">
+      <DependentUpon>slick.css</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\warhorsemicro - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\warhorsemicro - Web Deploy.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="content\css\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="content\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="content\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\images\gallery\Karen Henthorn and Steven Hillman in War Horse, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\LeeAmstrongandKarenHenthornWarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\LeeArmstrong%28Albert%29andBabyJoeyWarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\LeeArmstrong%28Albert%29ThomasGilbey,MichaelHumphreys,AndrewKeay%28Joey%29WarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\LeeArmstrong%28Albert%29WarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\LeeArmstrong%28Albert%29withBabyJoeyWarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\LeeArmstrongWarHorseTourbyEllieKurttz.jpg" />
+    <Content Include="content\images\gallery\Martin Wenner in War Horse, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\Matt Addis in War Horse, photo by Ellie Kurttz %282%29.jpg" />
+    <Content Include="content\images\gallery\Matt Addis in War Horse, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\Page17.jpg" />
+    <Content Include="content\images\gallery\Richard Vorster %28Joey Head%29 WarHorse by Ellie Kurttz Copy2.jpg" />
+    <Content Include="content\images\gallery\Richard Vorster %28Joey Head%29 WarHorse pic by Ellie KurttzCopy2.jpg" />
+    <Content Include="content\images\gallery\Richard Vorster in War Horse, photo by Ellie Kuttz.jpg" />
+    <Content Include="content\images\gallery\Steven Hillman and Karen Henthorn in War Horse, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\The Cast of War Horse, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\The Goose, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\War Horse  Photo by Brinkhoff Mögenburg 918-0308.JPG" />
+    <Content Include="content\images\gallery\War Horse  Photo by Brinkhoff Mögenburg 918-0337.JPG" />
+    <Content Include="content\images\gallery\War Horse on Tour, photo by Ellie Kurttz %282%29.jpg" />
+    <Content Include="content\images\gallery\War Horse on Tour, photo by Ellie Kurttz.jpg" />
+    <Content Include="content\images\gallery\War Horse Photo by Brinkhoff Mögenburg 918-0353.JPG" />
+    <Content Include="content\images\gallery\War Horse, photo by Ellie Kurttz %284%29.jpg" />
+    <Content Include="content\images\gallery\War Horse, photo by Ellie Kurttz %286%29.jpg" />
+    <Content Include="content\images\logos\Background-Image.jpg" />
+    <Content Include="content\images\logos\Pieter Toerien MonteCasino.png" />
+    <Content Include="content\images\logos\PTP-LOGO.png" />
+    <Content Include="content\images\logos\TOTB.png" />
+    <Content Include="content\images\logos\War-Horse-Main.png" />
+    <Content Include="content\images\MonteLogo.jpg" />
+    <Content Include="content\images\PTLogo.jpg" />
+    <Content Include="content\images\PTLogo.png" />
+    <Content Include="content\images\TOBayLogo.jpg" />
+    <Content Include="content\images\WarHorseLogo.png" />
+    <Content Include="content\images\warhorseMain.jpg" />
+    <Content Include="index.html" />
+    <Content Include="PTPrivacyPolicy.html" />
+    <Content Include="scripts\jquery-2.1.1.min.js" />
+    <Content Include="scripts\slick.js" />
+    <Content Include="scripts\slick.min.js" />
+    <Content Include="scripts\whms.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\views\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8879</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8879/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

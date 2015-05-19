@@ -1,0 +1,425 @@
+@import '_colours.scss';
+@import '_font-awesome.scss';
+@import '_mixins.scss'; 
+@import '_fonts.scss';
+@import 'slick.scss';
+
+// Breakpoints for responsive design 
+
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@mixin bp-iphone {
+    @media only screen /*and (min-device-width : 320px)*/ and (max-device-width : 480px) {
+        @content;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@mixin bp-ipadlandscape {
+    @media only screen 
+    and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        @content;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@mixin bp-ipad {
+    @media only screen /*and (min-device-width : 768px)*/ and (max-device-width : 1024px) {
+        @content;
+    }
+}
+
+/* Desktops and laptops ----------- */
+@mixin bp-desktop {
+    @media only screen and (min-width : 1224px) {
+        @content;
+    }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    //height: auto; 
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0; 
+    height: 100%;
+    min-width: 100%;
+    height: 100%; 
+    xpadding-bottom: 10px;
+    @include basic-font(); 
+    line-height: 1.428571429;
+    color: $base-colour;
+    /*
+	 * Relates to the pseudo class & sibling bug, see
+	 * http://css-tricks.com/webkit-sibling-bug/ for more details
+	 */
+    -webkit-animation: bugfix infinite 1s;
+}
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+/* Also relates to the pseudo class & sibling bug */
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+a:link {
+    text-decoration: none;
+    color: $secondary-colour; 
+}
+
+a:visited {
+    text-decoration: none;
+    color: $secondary-colour; 
+}
+
+a:active {
+    background-color: $accent-colour;
+}
+
+.primary {
+    position: relative;
+    float: left;
+    width: 100%;
+    overflow-x: hidden; 
+    //height: 20%; /*Temporary*/
+    header {
+        @include sectionheading-font(1.2);  
+        width: 100%;
+        border-bottom: 2px solid $base-colour;
+        h4 {
+            margin: 0;
+            padding: 1%; 
+            font-size: 1.2em; 
+        }
+    }
+}
+
+header.pageheader {
+    height: 20%;
+    background-color: $base-colour; 
+    img{
+        width: 20%;
+        position: absolute; 
+        bottom:25%;
+        left: 10%;  
+    }
+    .sociallinks{
+        position: absolute; 
+        bottom:25%; 
+        right: 5%; 
+        width: 30%; 
+        a{
+            cursor: pointer; 
+            margin-right:  15%; 
+            i{
+                font-size: 3em; 
+                color: $secondary-colour; 
+                @include bp-ipad {
+                    font-size: 2.5em;
+                } 
+            }
+            i:hover{
+                color: $accent-colour; 
+            }
+            &:last-of-type{
+                margin-right: 0; /*This is not having an effect for some reason*/
+            }
+        }
+    }
+    
+    @include bp-ipad {
+            height: 10%;
+        }   
+}
+
+#landing {
+
+    img.titlebackground{
+        width: 100%;
+        position: relative;
+        z-index: -1; 
+        vertical-align: central; 
+        @include bp-ipad {
+                width: auto;
+                height: 100%;
+            }   
+    }
+    article{
+        width: 35%; //Was 45%
+        position: absolute;
+        top: 0; 
+        bottom: 30%; //Was 0
+        right: 5%;  
+        color: $secondary-colour; 
+        p{
+            text-align: center; 
+            width: 100%; 
+            em{
+                font-style: normal;
+                font-weight: bold; 
+            }
+            @include bp-ipad{
+                @include basic-font(1);  
+                color: white; 
+            }
+        }
+        #titleimage{
+            width: 100%; 
+            //margin: 0 15%; 
+
+            @include bp-ipad {
+                margin-top: -10%;  
+            }  
+
+            @include bp-ipadlandscape{
+                height: 90%; 
+            }
+        }
+        .bookinglink{
+            display: block;
+            text-align: center; 
+            width: 35%; //Was 30%
+            @include basic-font(1.2); 
+            padding: 2.5% 3.5%; 
+            margin: -5% auto 0; 
+            border: 5px solid $secondary-colour;
+            cursor: pointer;
+            &:hover{
+                background-color: $secondary-colour;
+                color: $base-colour; 
+            } 
+            @include bp-ipad {
+                margin-bottom: 5%;  
+                border: 8px solid $secondary-colour;
+                width: 40%;
+                @include sectionheading-font(2);  
+                color: white;
+                @include alpha-attribute('background-color', rgba(black, 0.5), white); 
+            }  
+        }
+        @include bp-ipad {
+                width: 70%; 
+                right: 15%;
+                top: 15%;
+                bottom: 5%;   
+                left: auto;               
+            }  
+        @include bp-ipadlandscape{
+            top: 3%; 
+        }
+    }
+    @include bp-ipad {
+                height: 70%;  
+            } 
+    @include bp-ipadlandscape{
+            height: 100%; 
+        }
+    @include bp-iphone{
+                height: 100%;  
+            }
+}
+
+#about {   
+
+    background-color: lighten($base-colour, 97%); 
+
+    div.innersection{
+
+        width: 95%;
+        margin: 0 2.5%; 
+        h1{
+            @include mainheading-font(3.8); 
+            margin: 3% 0 5% 0; 
+            em{
+                font-style: normal; 
+                color: $accent-colour; 
+            }
+            @include bp-ipad {
+                @include mainheading-font(3); 
+            }  
+        }
+        p{
+            font-size: 1.5em;
+            &.fullwidth{
+                display: block; 
+                margin-top: 5%; 
+            }
+        }
+        .subheading{
+            @include subheading-font(1.4); 
+            line-height: 1.3;
+        }
+        .left{
+            margin: 0 5% 0 0;  
+            width: 55%;
+            float: left;
+            p{
+                font-size: 3em; 
+            } 
+            @include bp-ipad {
+                float: none; 
+                width: 100%; 
+            }  
+        }   
+        figure.right{
+            /*margin: 0; 
+            width: 65%;
+            float: left;*/ 
+            margin-right: 0;
+            margin-left: 0; 
+            position: relative;
+	        padding-bottom: 25.7%;
+	        padding-top: 30px;
+	        height: 0;
+	        overflow: hidden;
+        
+            @include bp-ipad {   
+                margin-right: 0;
+                margin-left: 0;          
+	            padding-bottom: 60%;
+	            padding-top: 30px;
+                display: block; 
+            }  
+
+            embed{
+                position: absolute;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+            }
+        }
+        .fullwidth{
+            width: 100%; 
+            float: none; 
+            clear: both;
+            line-height: 1.8;
+            @include bp-iphone { 
+                }  
+        }
+        
+        @include bp-desktop{
+            max-width: 960px; 
+            margin: 0 auto; 
+        }
+    }      
+}
+
+#gallery{
+    div.innersection{
+    width: 95%;   
+    margin: 0 2.5%; 
+    overflow-y: hidden; 
+    header {
+        margin-bottom: 2%; 
+    }
+
+    @include bp-desktop{
+        max-width: 960px; 
+        margin: 0 auto; 
+    }
+
+    /*div.imagegallery{
+        width: 960px;
+        height: 650px;
+        border: 1px solid red; 
+        img{
+            width: 100%;
+        }      
+    }*/
+  }
+}
+
+footer{
+    width: 100%; 
+    background-color: $base-colour; 
+    color: $secondary-colour; 
+
+    /*@include bp-ipad {
+                height: 30%;
+            }*/  
+
+    section.footersubsection{
+        width: 100%;
+        height: auto; 
+        float: none;
+        display: block; 
+        overflow: auto;   /*This is essentially a clearfix * Floated children are removed from element flow*/       
+        background-color: $base-colour; 
+        .half{           
+            width: 45%;
+            float: left; 
+            position: relative; 
+            border-bottom: 2px solid $accent-colour; 
+            padding-bottom: 2%; 
+            margin-top: 2%; 
+             
+            &#onleft{
+                margin-left:5%;
+                img{
+                    //width: 40%;
+                    height: 40%;
+                    float: right;
+                    margin-right: 5%;  
+                }              
+            }
+            &#onright{
+                margin-right:5%;
+                img{
+                    //width: 40%;
+                    height: 40%;
+                    float: left;
+                    margin-left: 5%;  
+                }               
+            }
+        }
+        .third{
+            width: 33%; 
+            float: left;
+            position: relative; 
+            margin-top: 1em; 
+            margin-bottom: 1em; 
+            p{
+                width: 60%;
+                display: block; 
+                margin: 0 auto; 
+                text-align: center; 
+            }  
+        }
+    }  
+    #finalstrip{
+        width: 100%;
+        background-color: $accent-colour; 
+        text-align: center; 
+        bottom: 0; 
+        p{
+            font-size: 0.8em;
+        }
+    }
+}
+
+
+

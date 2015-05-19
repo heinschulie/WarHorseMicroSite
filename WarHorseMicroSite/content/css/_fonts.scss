@@ -1,0 +1,44 @@
+@import '_colours.scss';
+@import 'font-awesome.scss'; 
+
+
+$base-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+$base-font-size: 1em; 
+
+$accent-font-family: "Aliquam"; 
+
+@mixin basic-font($fontsize: 1) {
+    font: {
+    family: 'Libre Baskerville', Helvetica,Arial,sans-serif; 
+    size: $base-font-size * $fontsize;
+  }
+}
+
+//Section Heading Section Heading (About/Gallery): Helvetica Neue Condensed Bold
+@mixin sectionheading-font($fontsize: 0.8) {
+    font: {
+    family: 'Fjalla One', Helvetica,Arial,sans-serif; 
+    size: $base-font-size * $fontsize;
+  }
+    color: $accent-colour;
+}
+
+// Sub headings:Baskerville Regular
+@mixin subheading-font($fontsize: 1) {
+    font: {
+    family: 'Libre Baskerville', Helvetica,Arial,sans-serif; 
+    size: $base-font-size + ($base-font-size * $fontsize);
+  }
+    color: $base-colour;
+}
+
+// Headings: Superclarendon Bold
+@mixin mainheading-font($fontsize: 5) {
+    font: {
+        family: 'Arbutus Slab', Helvetica,Arial,sans-serif; 
+        size: $base-font-size * $fontsize;
+      }
+    color:  $base-colour;
+    line-height: normal; 
+}
